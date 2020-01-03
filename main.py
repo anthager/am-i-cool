@@ -33,7 +33,11 @@ def rating_of_movies(path):
     f = open(path, 'r')
     lines = f.readlines()
     all_ratings = {}
+    first = True
     for movie in lines:
+        if first:
+            first = False
+            continue
         _id = movie.split("\t")[0]
         rating = movie.split("\t")[1]
         number = movie.split("\t")[2]
